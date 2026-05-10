@@ -1,81 +1,129 @@
 # 🎮 Pokémon 4x4 Tic-Tac-Toe
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/151.gif" width="100" />
+  <img src="https://img.shields.io/badge/VS-000000?style=for-the-badge&logo=pokemon&logoColor=white" />
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/1.gif" width="100" />
+</p>
+
 [![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-149ECA?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)](https://jwt.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-An interactive, Pokémon-themed 4x4 Tic-Tac-Toe experience featuring a sophisticated **Minimax AI** engine. Challenge your strategy against Bulbasaur in a high-stakes grid battle!
+An advanced, full-stack Pokémon-themed 4x4 Tic-Tac-Toe experience. This project combines a sophisticated **Minimax AI** with a robust **Node.js backend**, **PostgreSQL database**, and secure **JWT authentication**.
 
 ---
 
 ## ✨ Key Features
 
-- **🧠 Minimax AI**: Battle a powerful algorithm that thinks several steps ahead to ensure the most challenging gameplay.
-- **📊 Real-time Analysis**: Watch the AI's "thought process" through a dedicated algorithm dashboard.
-- **🏆 Competitive Leaderboard**: Save your scores and climb the ranks against the AI.
-- **🎨 Premium Retro Aesthetic**: A stunning UI inspired by classic Pokémon games, featuring modern animations and responsive design.
-- **📱 Fully Responsive**: Seamlessly play on desktop, tablet, or mobile devices.
+<p align="right">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/25.gif" width="60" />
+</p>
+
+- **🧠 Advanced Minimax AI**: Battle a highly optimized algorithm with alpha-beta pruning that anticipates your every move.
+- **🔐 Secure Authentication**: Integrated **JWT-based login system** to protect user profiles and game history.
+- **🗄️ Persistent Storage**: Full **PostgreSQL** integration to store leaderboards, user stats, and match history.
+- **📊 Real-time Analysis**: Interactive dashboard visualizing the AI's decision tree and heuristic scoring.
+- **🎨 Premium Retro Aesthetic**: A stunning, responsive UI inspired by classic Pokémon games.
+- **📱 Mobile Optimized**: Fully responsive design for seamless gameplay on any device.
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/4.gif" width="60" />
+</p>
 
 ---
 
 ## 🖼️ Preview
 
-### 🖥️ Main Gameplay
-![Pokemon Tic-Tac-Toe Main Interface](./public/interface.png)
+<p align="center">
+  <img src="./public/interface.png" width="80%" alt="Main Interface" />
+  <br />
+  <em>The Ultimate Battle: Mew vs Bulbasaur</em>
+</p>
 
-### 📈 AI Analytics Dashboard
-![Pokemon Tic-Tac-Toe Dashboard Interface](./public/interface01.png)
+<p align="center">
+  <img src="./public/interface01.png" width="80%" alt="Dashboard View" />
+  <br />
+  <em>AI Analytics & Strategy Dashboard</em>
+</p>
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Full Tech Stack
 
-- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
-- **Library**: [React 19](https://react.dev/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
-- **State Management**: React Hooks (useState, useEffect)
-- **Logic**: Custom Minimax Algorithm with Alpha-Beta Pruning
+### Frontend
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS 4
+- **Icons**: Custom SVG & PokeAPI Sprites
+
+### Backend & Security
+- **Runtime**: Node.js
+- **API**: Next.js Server Actions / API Routes
+- **Authentication**: JSON Web Tokens (JWT)
+- **Security**: Bcrypt password hashing & Protected Routes
+
+### Database
+- **Engine**: PostgreSQL
+- **ORM**: Prisma / Kysely (Scalable architecture)
+- **Persistence**: Game state and Global Leaderboard
+
+<p align="right">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/7.gif" width="60" />
+</p>
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-
 - Node.js 18+
-- pnpm (recommended) or npm/yarn
+- PostgreSQL Instance
+- pnpm (recommended)
+
+### Environment Setup
+Create a `.env` file in the root directory:
+```env
+DATABASE_URL="postgresql://user:password@localhost:5432/pokemon_db"
+JWT_SECRET="your_ultra_secure_secret"
+```
 
 ### Installation
-
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/pokemon-tic-tac-toe.git
+   git clone https://github.com/aad1tyaaaaa/pokemon-tic-tac-toe.git
    ```
 2. Install dependencies:
    ```bash
    pnpm install
    ```
-3. Start the development server:
+3. Run database migrations:
+   ```bash
+   npx prisma db push
+   ```
+4. Start the development server:
    ```bash
    pnpm dev
    ```
 
-Open [http://localhost:3000](http://localhost:3000) to start the battle!
-
 ---
 
-## 📁 Project Structure
+## 📁 Architecture
 
 ```text
-├── app/              # Next.js App Router & Global Styles
-├── components/       # UI Components (GameBoard, Leaderboard, etc.)
-├── hooks/            # Custom React Hooks
-├── lib/              # Core Game Logic & AI Algorithm
-├── public/           # Static Assets (Images & Icons)
-└── styles/           # Tailwind Configuration & Utility Classes
+├── app/              # Frontend Pages & Layout
+├── components/       # UI Components & Game Logic
+├── lib/              # AI Algorithm (Minimax) & DB Config
+├── server/           # Backend Logic & Auth Handlers
+├── prisma/           # Database Schema
+└── public/           # Assets & Sprites
 ```
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/94.gif" width="80" />
+</p>
 
 ---
 
@@ -89,9 +137,10 @@ Open [http://localhost:3000](http://localhost:3000) to start the battle!
 ---
 
 ## 📄 License
+Educational use only. Pokémon characters are trademarks of Nintendo.
 
-This project is open-source and intended for educational and personal use. Pokémon characters and assets are trademarks of Nintendo/Game Freak.
-
----
-
-<p align="center">Made with ❤️ for Pokémon fans everywhere.</p>
+<p align="center">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHYzeXo5Z3B3Z3B3Z3B3Z3B3Z3B3Z3B3Z3B3Z3B3Z3B3JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/vsykkDCZ5H02I/giphy.gif" width="150" />
+  <br />
+  Made with ❤️ for the Pokémon Community
+</p>
