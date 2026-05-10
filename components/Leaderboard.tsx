@@ -135,28 +135,30 @@ export function Leaderboard({ currentStats, onStatsUpdate }: LeaderboardProps) {
 
       {/* Leaderboard list */}
       {entries.length > 0 ? (
-        <div className="space-y-2">
-          <div className="text-[10px] font-bold text-gray-600 grid grid-cols-5 gap-1 px-2 pb-2 border-b border-red-200 uppercase">
-            <div>Rank</div>
-            <div>Name</div>
-            <div>User</div>
-            <div>AI</div>
-            <div>Rate</div>
-          </div>
-          {entries.slice(0, 10).map((entry, idx) => (
-            <div
-              key={entry.id}
-              className="text-[10px] grid grid-cols-5 gap-1 px-2 py-1 bg-white rounded border border-red-100 hover:bg-pink-100 transition-colors"
-            >
-              <div className="font-bold text-red-600">#{idx + 1}</div>
-              <div className="truncate font-semibold">{entry.name}</div>
-              <div className="text-green-600 font-bold">{entry.wins}</div>
-              <div className="text-red-500 font-bold">{entry.aiWins ?? entry.losses}</div>
-              <div className="text-yellow-600 font-bold">
-                {entry.winRate}%
-              </div>
+        <div className="space-y-2 overflow-x-auto">
+          <div className="min-w-[250px]">
+            <div className="text-[10px] font-bold text-gray-600 grid grid-cols-5 gap-1 px-2 pb-2 border-b border-red-200 uppercase">
+              <div>Rank</div>
+              <div>Name</div>
+              <div>User</div>
+              <div>AI</div>
+              <div>Rate</div>
             </div>
-          ))}
+            {entries.slice(0, 10).map((entry, idx) => (
+              <div
+                key={entry.id}
+                className="text-[10px] grid grid-cols-5 gap-1 px-2 py-1 bg-white rounded border border-red-100 hover:bg-pink-100 transition-colors"
+              >
+                <div className="font-bold text-red-600">#{idx + 1}</div>
+                <div className="truncate font-semibold">{entry.name}</div>
+                <div className="text-green-600 font-bold">{entry.wins}</div>
+                <div className="text-red-500 font-bold">{entry.aiWins ?? entry.losses}</div>
+                <div className="text-yellow-600 font-bold">
+                  {entry.winRate}%
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       ) : (
         <div className="text-center py-4 text-gray-600 text-sm">

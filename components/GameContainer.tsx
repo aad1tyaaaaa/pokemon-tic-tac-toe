@@ -122,12 +122,14 @@ export function GameContainer({
   return (
     <div className="flex flex-col gap-6 items-center">
       {/* Decorative top element */}
-      <div className="flex items-center gap-3">
-        <MewIcon size={40} />
-        <h2 className="text-2xl font-bold text-center text-gray-800">
-          MEW vs BULBASAUR
-        </h2>
-        <BulbasaurIcon size={40} />
+      <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+        <div className="flex items-center gap-3">
+          <MewIcon className="w-8 h-8 sm:w-10 sm:h-10" />
+          <h2 className="text-xl sm:text-2xl font-bold text-center text-gray-800">
+            MEW vs BULBASAUR
+          </h2>
+          <BulbasaurIcon className="w-8 h-8 sm:w-10 sm:h-10" />
+        </div>
       </div>
 
       {/* Game board */}
@@ -145,10 +147,10 @@ export function GameContainer({
       {getTacticSuggestion()}
 
       {/* Win/Loss/Draw counts */}
-      <div className="flex gap-4 text-sm font-semibold text-gray-700 bg-pink-50 p-3 rounded border-2 border-red-300">
-        <div>🏆 You: {stats.playerWins}</div>
-        <div>🍃 Bulbasaur: {stats.aiWins}</div>
-        <div>🤝 Draws: {stats.draws}</div>
+      <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-semibold text-gray-700 bg-pink-50 p-2 sm:p-3 rounded border-2 border-red-300">
+        <div className="flex items-center gap-1">🏆 You: {stats.playerWins}</div>
+        <div className="flex items-center gap-1">🍃 Bulbasaur: {stats.aiWins}</div>
+        <div className="flex items-center gap-1">🤝 Draws: {stats.draws}</div>
       </div>
 
       {/* New Game button */}

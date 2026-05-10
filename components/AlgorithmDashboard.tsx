@@ -32,53 +32,57 @@ export function AlgorithmDashboard() {
   };
 
   return (
-    <div className="w-full bg-yellow-50 border-2 border-red-300 rounded p-4">
+    <div className="w-full bg-yellow-50 border-2 border-red-300 rounded p-4 overflow-hidden">
       <h3 className="text-lg font-bold text-center mb-4 text-gray-800">
         MINIMAX ANALYZER
       </h3>
 
-      {/* Controls */}
-      <div className="space-y-3 mb-4 p-3 bg-white border-2 border-red-200 rounded">
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            Test Board:
-          </label>
-          <select
-            value={selectedBoard}
-            onChange={(e) =>
-              setSelectedBoard(e.target.value as 'empty' | 'game1' | 'game2')
-            }
-            className="w-full px-3 py-2 border-2 border-red-300 rounded text-sm"
-          >
-            <option value="empty">Empty Board</option>
-            <option value="game1">Early Game</option>
-            <option value="game2">Mid Game</option>
-          </select>
-        </div>
+      <div className="max-w-full overflow-x-auto">
+        <div className="min-w-[280px]">
+          {/* Controls */}
+          <div className="space-y-3 mb-4 p-3 bg-white border-2 border-red-200 rounded">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Test Board:
+              </label>
+              <select
+                value={selectedBoard}
+                onChange={(e) =>
+                  setSelectedBoard(e.target.value as 'empty' | 'game1' | 'game2')
+                }
+                className="w-full px-3 py-2 border-2 border-red-300 rounded text-sm"
+              >
+                <option value="empty">Empty Board</option>
+                <option value="game1">Early Game</option>
+                <option value="game2">Mid Game</option>
+              </select>
+            </div>
 
-        <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            Search Depth: {depth}
-          </label>
-          <input
-            type="range"
-            min="2"
-            max="7"
-            value={depth}
-            onChange={(e) => setDepth(parseInt(e.target.value))}
-            className="w-full"
-          />
-          <div className="text-xs text-gray-600 mt-1">
-            Higher depth = stronger AI (slower)
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Search Depth: {depth}
+              </label>
+              <input
+                type="range"
+                min="2"
+                max="7"
+                value={depth}
+                onChange={(e) => setDepth(parseInt(e.target.value))}
+                className="w-full"
+              />
+              <div className="text-xs text-gray-600 mt-1">
+                Higher depth = stronger AI (slower)
+              </div>
+            </div>
+
+            <button
+              onClick={handleAnalyze}
+              className="w-full px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded transition-colors"
+            >
+              Analyze
+            </button>
           </div>
         </div>
-
-        <button
-          onClick={handleAnalyze}
-          className="w-full px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded transition-colors"
-        >
-          Analyze
-        </button>
       </div>
 
       {/* Results */}

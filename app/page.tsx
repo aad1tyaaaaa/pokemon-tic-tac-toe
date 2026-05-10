@@ -46,15 +46,15 @@ export default function Home() {
     >
       {/* Overlaid text - decorative background element */}
       <div
-        className="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden"
+        className="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden hidden sm:block"
         style={{
           zIndex: 0,
         }}
       >
-        <div className="absolute top-20 left-10 text-6xl font-black text-pink-200 opacity-20 select-none" style={{ fontFamily: '"Press Start 2P", cursive' }}>
+        <div className="absolute top-20 left-10 text-4xl md:text-6xl font-black text-pink-200 opacity-20 select-none" style={{ fontFamily: '"Press Start 2P", cursive' }}>
           BULBASAUR
         </div>
-        <div className="absolute bottom-32 right-12 text-6xl font-black text-pink-200 opacity-20 select-none" style={{ fontFamily: '"Press Start 2P", cursive' }}>
+        <div className="absolute bottom-32 right-12 text-4xl md:text-6xl font-black text-pink-200 opacity-20 select-none" style={{ fontFamily: '"Press Start 2P", cursive' }}>
           MEW
         </div>
       </div>
@@ -62,20 +62,14 @@ export default function Home() {
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1
-            className="text-5xl font-black text-yellow-500 mb-2 drop-shadow-lg"
-            style={{ fontFamily: '"Press Start 2P", cursive' }}
-          >
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="retro-title-lg text-yellow-500 mb-2 drop-shadow-lg">
             POKEMON
           </h1>
-          <h2
-            className="text-4xl font-black text-red-600 mb-2 drop-shadow-lg"
-            style={{ fontFamily: '"Press Start 2P", cursive' }}
-          >
+          <h2 className="retro-title-md text-red-600 mb-4 drop-shadow-lg leading-tight">
             4x4 TIC-TAC-TOE
           </h2>
-          <p className="text-lg font-bold text-gray-800 bg-yellow-200 inline-block px-4 py-2 rounded border-2 border-red-600">
+          <p className="text-sm sm:text-lg font-bold text-gray-800 bg-yellow-200 inline-block px-4 py-2 rounded border-2 border-red-600">
             Challenge the Minimax AI!
           </p>
         </div>
@@ -104,13 +98,13 @@ export default function Home() {
         </div>
 
         {/* Advanced AI Explanation Section */}
-        <div className="bg-yellow-100 border-4 border-red-400 rounded-xl p-8 mb-8 shadow-[8px_8px_0px_rgba(220,38,38,1)]">
+        <div className="bg-yellow-100 border-4 border-red-400 rounded-xl p-4 sm:p-8 mb-8 shadow-[8px_8px_0px_rgba(220,38,38,1)]">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-black text-red-600 mb-6 text-center underline decoration-wavy" style={{ fontFamily: '"Press Start 2P", cursive' }}>
+            <h2 className="text-xl sm:text-3xl font-black text-red-600 mb-6 text-center underline decoration-wavy" style={{ fontFamily: '"Press Start 2P", cursive' }}>
               HOW BULBASAUR THINKS
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
               <div className="space-y-4">
                 <div className="bg-white p-4 border-2 border-red-200 rounded-lg transform -rotate-1 shadow-md">
                   <h3 className="font-bold text-lg text-blue-700 mb-2">The Minimax Logic</h3>

@@ -26,10 +26,10 @@ export function GameBoard({ board, onCellClick, disabled = false }: GameBoardPro
               key={`${rowIdx}-${colIdx}`}
               onClick={() => !disabled && cell === 'empty' && onCellClick(rowIdx, colIdx)}
               disabled={disabled || cell !== 'empty'}
-              className="w-20 h-20 bg-pink-100 flex items-center justify-center hover:bg-pink-200 transition-colors disabled:cursor-not-allowed border-2 border-red-600"
+              className="game-cell"
             >
-              {cell === 'player' && <MewIcon size={50} />}
-              {cell === 'ai' && <BulbasaurIcon size={50} />}
+              {cell === 'player' && <MewIcon className="w-10 h-10 sm:w-12 sm:h-12" />}
+              {cell === 'ai' && <BulbasaurIcon className="w-10 h-10 sm:w-12 sm:h-12" />}
             </button>
           ))
         )}

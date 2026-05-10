@@ -1,28 +1,28 @@
 import Image from 'next/image';
 
-export function MewIcon({ size = 40 }: { size?: number }) {
+export function MewIcon({ size = 40, className }: { size?: number; className?: string }) {
   return (
-    <div className="relative flex items-center justify-center" style={{ width: size, height: size }}>
+    <div className={`relative flex items-center justify-center ${className}`} style={!className ? { width: size, height: size } : {}}>
       <Image 
         src="/mew.png" 
         alt="Mew" 
-        width={size} 
-        height={size} 
-        className="object-contain drop-shadow-md"
+        width={500} 
+        height={500} 
+        className="object-contain drop-shadow-md w-full h-full"
       />
     </div>
   );
 }
 
-export function BulbasaurIcon({ size = 40 }: { size?: number }) {
+export function BulbasaurIcon({ size = 40, className }: { size?: number; className?: string }) {
   return (
-    <div className="relative flex items-center justify-center" style={{ width: size, height: size }}>
+    <div className={`relative flex items-center justify-center ${className}`} style={!className ? { width: size, height: size } : {}}>
       <Image 
         src="/bulbasaur.png" 
         alt="Bulbasaur" 
-        width={size} 
-        height={size} 
-        className="object-contain drop-shadow-md"
+        width={500} 
+        height={500} 
+        className="object-contain drop-shadow-md w-full h-full"
       />
     </div>
   );
